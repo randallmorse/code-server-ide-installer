@@ -1,15 +1,14 @@
+#!/bin/bash
+
 if [[ ! -n "${vs_password}" ]]; then 
     echo "Please set an ENV variable for your visual studio code server password (ex: export vs_password=swordfish)"
     exit
 fi
 
-#!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -yqq
 apt-get upgrade -yqq
 apt-get install build-essential htop tmux vim-nox -yqq
-sudo apt-get update
-sudo apt-get upgrade
 mkdir ~/code-server
 wget https://github.com/cdr/code-server/releases/download/v3.3.1/code-server-3.3.1-linux-amd64.tar.gz
 tar -xzvf code-server-3.3.1-linux-amd64.tar.gz
